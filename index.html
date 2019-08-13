@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES6</title>
+</head>
+<body>
+    <script>
+        // var x = 6
+       /*  const x = 7
+        if (true) {            
+        let x = 4;
+        console.log(x); 
+        }
+        console.log(x);  */
+        // ... (spread operator)
+        let line1 = ['my','name','is','suraj','nirala']
+        // console.log(...line1);
+
+
+        // back tics OR template literals
+       /*  let number = 10;
+        var b = 'advanced javascript'
+       var  value = function(){
+            return number;
+        } */
+        // let name = "this is es5 tutorials "+b+" tutorial"
+        // use of back tic
+        /* var name = `this is es5 tutorials ${b} ${value()} tutorial`
+        console.log(name) */
+
+
+        // funtion default parameter
+        let add = function (a=1,b=2){
+            return a + b
+        }
+        // console.log(add())
+
+        let multiplication = function(c = 2 ,d = add()){
+            return c * d
+        }
+        // console.log(multiplication())
+        let lans = ['php','java','pyton','react','angular']
+        // same result below
+        /* lans.map(function(lan){
+            console.log(lan.length)
+            console.log(lan)
+        }) */
+        // same result above and below
+       /*  lans.map((lan) => {
+            console.log(lan.length)
+            console.log(lan)
+        }) */
+        // same result above
+        /* lans.map((lan) => 
+            console.log(lan.length)+
+            console.log(lan)
+        ) */
+        /* let lans2 = () => lans
+        console.log(lans2()) */
+        // lexical this
+        let list = {
+            cat : "electronic",
+            names : ['mobile','washing machine','laptop','computer'],
+            call: function(){
+                // old syntax
+                /* THIS = this
+                this.names.map(function(name){
+                    console.log(`${THIS.cat} ${name}`)
+                }) */
+                // new syntax
+                this.names.map((name) => console.log(`${this.cat} ${name}`))
+            }
+        }
+        // list.call()
+
+        // using class and interitace
+        class es6{
+            constructor(name){
+                this.name = name;
+            }
+            show(features) {
+               return `${this.name} is very powerfull of Advanced javascript ${features}`; 
+            }
+        }
+        class es5 extends es6{
+            constructor(name){
+                super(name)
+            }
+            label(){
+                return 'ES6 is ECMA6 language';
+            }
+        }
+        let obj = new es5('type of maps');
+        // console.log(obj.label())
+        console.log(obj.show('ES6 feature'))
+    </script>
+    <h1>HERE ES6 Module</h1>
+</body>
+</html>
